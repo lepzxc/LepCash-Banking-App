@@ -14,7 +14,7 @@ public class Main {
         BankService bank = new BankService();
 
         System.out.println("==================================");
-        System.out.println("     JCASH BANK OF THE PHILIPPINES");
+        System.out.println("             LepCash");
         System.out.println("==================================");
         System.out.println("DEMO ACCOUNTS:");
         System.out.println("Mobile: 09171234567 | PIN: 1234");
@@ -27,7 +27,7 @@ public class Main {
             return;
         }
 
-        System.out.println("\\nWelcome, " + loggedInUser.getFullName() + "!");
+        System.out.println("\nWelcome, " + loggedInUser.getFullName() + "!");
         boolean running = true;
 
         while (running) {
@@ -48,7 +48,7 @@ public class Main {
                     showTransactions(loggedInUser);
                     break;
                 case 5:
-                    System.out.println("Thank you for using JCash. Goodbye!");
+                    System.out.println("Thank you for using LepCash. Goodbye!");
                     running = false;
                     break;
                 default:
@@ -60,7 +60,7 @@ public class Main {
 
     private static User authenticate(InputUtil input, BankService bank) {
         for (int attempt = 1; attempt <= MAX_LOGIN_ATTEMPTS; attempt++) {
-            System.out.println("\\n--- LOGIN ---");
+            System.out.println("\n--- LOGIN ---");
             String mobile = input.readText("Mobile number: ");
             String pin = input.readText("PIN: ");
 
@@ -76,8 +76,8 @@ public class Main {
     }
 
     private static void showMenu(User user) {
-        System.out.println("\\n----------------------------------");
-        System.out.println("JCASH MAIN MENU");
+        System.out.println("\n----------------------------------");
+        System.out.println("LepCash MAIN MENU");
         System.out.println("Account: " + user.getFullName());
         System.out.println("1. Check Balance");
         System.out.println("2. Cash In");
@@ -109,7 +109,7 @@ public class Main {
     }
 
     private static void showTransactions(User user) {
-        System.out.println("\\n--- TRANSACTION HISTORY ---");
+        System.out.println("\n--- TRANSACTION HISTORY ---");
         if (user.getTransactions().isEmpty()) {
             System.out.println("No transactions found.");
             return;
